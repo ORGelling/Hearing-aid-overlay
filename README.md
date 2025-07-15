@@ -1,7 +1,7 @@
 # Hearing-aid-overlay
 Making a screen overlay to aid people with hearing trouble in where the direction of in-game sounds are coming from
 
-Steps for SDL3:
+Steps for SDL3:<br/>
 • Install SDL3 and SDL_image (via vcpkg, package manager, or from source).
 • Initialize SDL3 in the main() function.
 • Load card images (e.g., "images/2H.png", "images/AS.png").
