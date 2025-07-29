@@ -1,0 +1,47 @@
+Key Points:
+FMOD: Handles 3D sound positioning and listener attributes.
+SDL: Renders a simple overlay with a line pointing to the sound direction.
+Mapping: Converts 3D sound positions to 2D screen coordinates.
+Prerequisites:
+Install FMOD and SDL2 development libraries.
+Link FMOD and SDL2 in your build system.
+Compilation:
+On Windows, use a compiler like g++ or Visual Studio. For example, with g++:
+
+g++ main.cpp -o SoundOverlay -lSDL2 -lfmod
+
+Follow these steps to install FMOD and SDL2 on a Windows machine.
+
+Install SDL2:
+Download the SDL2 development libraries for Windows from the SDL2 website.
+Extract the downloaded ZIP file to a folder on your system.
+Copy the include folder to your project directory or configure your compiler to include it.
+Copy the lib folder (specific to your compiler, e.g., lib/x64 for 64-bit MinGW) to your project directory or configure your linker to include it.
+Place the SDL2.dll file (from the lib folder) in the same directory as your compiled executable.
+
+Install FMOD:
+Download the FMOD Studio API for Windows from the FMOD website.
+Extract the downloaded ZIP file to a folder on your system.
+Copy the api/core/inc folder to your project directory or configure your compiler to include it.
+Copy the appropriate lib folder (e.g., api/core/lib/x64 for 64-bit MinGW) to your project directory or configure your linker to include it.
+Place the fmod.dll file (from the api/core/lib folder) in the same directory as your compiled executable.
+Configure Your Build System:
+Add the include paths for SDL2 and FMOD to your compiler's include directories.
+Add the library paths for SDL2 and FMOD to your linker's library directories.
+Link against the required libraries (e.g., SDL2.lib and fmod_vc.lib for Visual Studio or -lSDL2 and -lfmod for MinGW). Use the Search marketplace command to find extensions that might help with SDL2 or FMOD development.
+
+https://wiki.libsdl.org/SDL3/FrontPage
+
+https://lazyfoo.net/tutorials/SDL/01_hello_SDL/windows/msvc2019/index.php
+
+https://github.com/libsdl-org/SDL/blob/main/INSTALL.md
+https://github.com/libsdl-org/SDL/blob/main/docs/INTRO-visualstudio.md
+
+Get a copy of the SDL source, you can clone the repo, or download the "Source Code" asset from the latest release.
+If you've downloaded a release, make sure to extract the contents somewhere you can find it.
+Create a new project in Visual Studio, using the C++ Empty Project template
+Add hello.c to the Source Files
+Right click the solution, select add an existing project, navigate to VisualC/SDL from within the source you cloned or downloaded above and add SDL.vcxproj
+Select your main project and go to Project -> Add -> Reference and select SDL3
+Select your main project and go to Project -> Properties, set the filter at the top to "All Configurations" and "All Platforms", select C/C++ -> General and add the SDL include directory to "Additional Include Directories"
+Build and run!
