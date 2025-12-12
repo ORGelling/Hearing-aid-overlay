@@ -17,8 +17,8 @@ void ArrowOverlay::drawArrow(std::size_t size, double angle) {
 //      ex, ey
 //  );
 
-    for (double ha : {angle + 3.141592653589793 - cfg.arrow_head_angle, 
-                        angle + 3.141592653589793 + cfg.arrow_head_angle}) 
+    for (double ha : {angle + OverlayValues::pi - cfg.arrow_head_angle, 
+                        angle + OverlayValues::pi + cfg.arrow_head_angle}) 
     {
         double ch = std::cos(ha), sh = std::sin(ha);
         SDL_RenderDrawLine(

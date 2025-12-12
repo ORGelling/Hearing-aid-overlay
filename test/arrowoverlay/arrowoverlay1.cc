@@ -13,6 +13,6 @@ ArrowOverlay::ArrowOverlay(const OverlayConfig& config)
 {
     // Initialize compass angles (N, NE, ..., NW)
     for (std::size_t i = 0; i < cfg.compass_arrow_count; ++i)
-        arrow_angles.push_back(-3.141592653589793 / 2 
-                    + i * (2 * 3.141592653589793 / cfg.compass_arrow_count));
+        arrow_angles.push_back(-OverlayValues::pi / 2 
+                    + i * (2 * OverlayValues::pi / cfg.compass_arrow_count));
 }

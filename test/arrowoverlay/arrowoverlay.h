@@ -25,7 +25,6 @@ class ArrowOverlay
 
     private:
         void mainLoop();
-        //void handleEvents(bool &running, SDL_Event &e);
         void renderFrame();
         void drawArrow(std::size_t size, double angle);
 
