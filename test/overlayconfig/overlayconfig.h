@@ -18,7 +18,8 @@ struct OverlayConfig
     std::size_t compass_arrow_count = 16;
     
     OverlayConfig() = default;
-    OverlayConfig(int x, int h);
+    //OverlayConfig(int width, int height);
+    OverlayConfig(int length = 18, size_t = 7);
 };
         
 #endif

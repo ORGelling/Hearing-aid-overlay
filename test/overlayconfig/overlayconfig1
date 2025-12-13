@@ -1,0 +1,9 @@
+#include "overlayconfig.ih"
+
+    // by 
+
+OverlayConfig::OverlayConfig(int width, int height)
+:
+    window_width(width),
+    window_height(height)
+{}

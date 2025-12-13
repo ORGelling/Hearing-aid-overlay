@@ -2,7 +2,7 @@
 
     // by 
 
-void ArrowOverlay::drawArrow(std::size_t size, double angle) 
+void ArrowOverlay::drawArrow(std::size_t idx, double angle) 
 {
     double ca = cos(angle);
     double sa = sin(angle);
@@ -16,9 +16,13 @@ void ArrowOverlay::drawArrow(std::size_t size, double angle)
 //  int sx = d_cx + static_cast<int>((d_rx - d_cfg.arrow_length) * ca);
 //  int sy = d_cy + static_cast<int>((d_ry - d_cfg.arrow_length) * sa);
     
-    SDL_SetRenderDrawColor(d_renderer, 200, Uint8(55 * size), 
-                                            Uint8(255 - 30 * size), 255);
-    
+                                                            // colour circle
+    SDL_SetRenderDrawColor(d_renderer, 200, static_cast<uint8_t>(55 * idx), 
+                                static_cast<uint8_t>(255 - 30 * idx), 255);
+
+                                                            // single colour
+//  SDL_SetRenderDrawColor(d_renderer, 160, 32, 240, 255);  
+                                                            // arrow base
 //  SDL_RenderDrawLine(d_renderer, sx, sy, ex, ey);     // ellips
 //  SDL_RenderDrawLine(                                 // circle
 //      d_renderer,
@@ -38,5 +42,5 @@ void ArrowOverlay::drawArrow(std::size_t size, double angle)
             static_cast<int>(ex + d_cfg.arrow_head_length * ch),
             static_cast<int>(ey + d_cfg.arrow_head_length * sh)
         );
-    }
+    }                                       // draw thicker line?
 }
