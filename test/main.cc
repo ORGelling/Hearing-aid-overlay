@@ -1,11 +1,23 @@
 #include "main.ih"
 
-int main() 
+int main(int argc, char **argv) 
+try
 {
-    OverlayConfig config(24, 3);                // setting arrow type
-    //config.window_width = 2048;
-    //config.window_height = ; // 1152
-    //config.compass_arrow_count = 16;
+    int size = 40;
+    double angle = 3;
+    //size_t count = 16;
+    if (argc == 3)
+    {
+        size = stoi(argv[1]);
+        angle = stod(argv[2]);
+    }
+    
+    OverlayConfig config(size, angle);                // setting arrow type
+    //config.compass_arrow_count = count;
     ArrowOverlay overlay(config);
     overlay.run();
+}
+catch (...)
+{
+    return handleExceptions();
 }

@@ -19,7 +19,7 @@ struct OverlayConfig
     
     OverlayConfig() = default;
     //OverlayConfig(int width, int height);
-    OverlayConfig(int length = 18, size_t = 7);
+    OverlayConfig(int length, double angle);
 };
         
 #endif

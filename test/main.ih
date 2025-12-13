@@ -1,4 +1,12 @@
 #include "arrowoverlay/arrowoverlay.h"
+#include <string>
+#include <iostream>
+#include <exception>
+#include <stdexcept>
+
 //#include <SDL2/SDL.h>
 
 using namespace std;
+
+//int usage()?
+int handleExceptions();

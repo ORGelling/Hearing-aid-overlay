@@ -2,7 +2,7 @@
 
     // by 
 
-OverlayConfig::OverlayConfig(int length, size_t angle)
+OverlayConfig::OverlayConfig(int length, double angle)
 :
     arrow_head_length(length),
     arrow_head_angle(OverlayValues::pi / angle)
