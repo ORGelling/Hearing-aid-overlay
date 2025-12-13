@@ -7,24 +7,26 @@ bool ArrowOverlay::run()
     if (SDL_Init(SDL_INIT_VIDEO) < 0) 
         return false;
 
-    window = SDL_CreateWindow("Compass Overlay",
-        SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
-        cfg.window_width, cfg.window_height, SDL_WINDOW_SHOWN);
+    initialiseWindow();
     
-    if (!window) 
+    d_window = SDL_CreateWindow("Compass Overlay",
+        SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
+        d_cfg.window_width, d_cfg.window_height, SDL_WINDOW_SHOWN);
+    
+    if (!d_window) 
         return false;
 
-    renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
-    if (!renderer) 
+    d_renderer = SDL_CreateRenderer(d_window, -1, SDL_RENDERER_ACCELERATED);
+    if (!d_renderer) 
     {
-        SDL_DestroyWindow(window);
+        SDL_DestroyWindow(d_window);
         return false;
     }
 
     mainLoop();
     
-    SDL_DestroyRenderer(renderer);
-    SDL_DestroyWindow(window);
+    SDL_DestroyRenderer(d_renderer);
+    SDL_DestroyWindow(d_window);
     SDL_Quit();
     return true;
 }

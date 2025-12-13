@@ -2,17 +2,20 @@
 
     // by 
 
-ArrowOverlay::ArrowOverlay(const OverlayConfig& config)
+ArrowOverlay::ArrowOverlay(OverlayConfig const &config)
 : 
-    cfg(config),
-    cx(cfg.window_width / 2),
-    cy(cfg.window_height / 2),
-    radius(min(cfg.window_width / 2, cfg.window_height / 2) - cfg.margin),
-    window(0),
-    renderer(0)
+    d_cfg(config),
+    d_cx(d_cfg.window_width / 2),
+    d_cy(d_cfg.window_height / 2),
+    d_radius(min(d_cfg.window_width / 2, 
+                 d_cfg.window_height / 2) - d_cfg.margin),
+    d_window(0),
+    d_renderer(0)
 {
     // Initialize compass angles (N, NE, ..., NW)
-    for (std::size_t i = 0; i < cfg.compass_arrow_count; ++i)
-        arrow_angles.push_back(-OverlayValues::pi / 2 
-                    + i * (2 * OverlayValues::pi / cfg.compass_arrow_count));
+    for (size_t idx = 0; idx < d_cfg.compass_arrow_count; ++idx)
+    {
+        d_arrow_angles.push_back(-OverlayValues::pi / 2 
+                + idx * (2 * OverlayValues::pi / d_cfg.compass_arrow_count));
+    }
 }

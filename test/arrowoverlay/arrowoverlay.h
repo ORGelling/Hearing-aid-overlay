@@ -9,14 +9,14 @@ struct SDL_Renderer;
 
 class ArrowOverlay
 {
-    OverlayConfig cfg;          // struct holding std values
+    OverlayConfig d_cfg;          // struct holding std values
     
-    int cx;
-    int cy;
-    int radius;
-    std::vector<double> arrow_angles;
-    SDL_Window* window;
-    SDL_Renderer* renderer;
+    int d_cx;
+    int d_cy;
+    int d_radius;
+    std::vector<double> d_arrow_angles;
+    SDL_Window *d_window;
+    SDL_Renderer *d_renderer;
 
     public:
         explicit ArrowOverlay(OverlayConfig const &config);
@@ -24,6 +24,7 @@ class ArrowOverlay
         bool run();
 
     private:
+        void initialiseWindow();
         void mainLoop();
         void renderFrame();
         void drawArrow(std::size_t size, double angle);

@@ -4,11 +4,11 @@
 
 void ArrowOverlay::renderFrame()
 {
-    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 200);
-    SDL_RenderClear(renderer);
+    SDL_SetRenderDrawColor(d_renderer, 0, 0, 0, 200);
+    SDL_RenderClear(d_renderer);
 
-    for (std::size_t i = 0; i < arrow_angles.size(); ++i)
-        drawArrow(i, arrow_angles[i]);
+    for (std::size_t idx = 0; idx < d_arrow_angles.size(); ++idx)
+        drawArrow(idx, d_arrow_angles[idx]);
     
-    SDL_RenderPresent(renderer);
+    SDL_RenderPresent(d_renderer);
 }

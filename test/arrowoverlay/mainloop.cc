@@ -8,11 +8,16 @@ void ArrowOverlay::mainLoop()
     SDL_Event e;
     while (running) 
     {
-        //handleEvents(running, e);
         while (SDL_PollEvent(&e)) 
         {
             if (e.type == SDL_QUIT)
                 running = false;
+            
+            if (e.type == SDL_KEYDOWN) 
+            {
+                if (e.key.keysym.sym == SDLK_ESCAPE)
+                    running = false;
+            }
         }
         
         renderFrame();
