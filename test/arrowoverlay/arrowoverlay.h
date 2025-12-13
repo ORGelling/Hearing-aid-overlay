@@ -9,15 +9,18 @@ struct SDL_Renderer;
 
 class ArrowOverlay
 {
-    OverlayConfig d_cfg;          // struct holding std values
-    
-    int d_cx;
+    OverlayConfig d_cfg;            // struct holding std values
+
+    int d_cx;                       // arrow orientation
     int d_cy;
+    int d_rx;                       // for ellips
+    int d_ry;
     int d_radius;
     std::vector<double> d_arrow_angles;
+       
     SDL_Window *d_window;
-    SDL_Renderer *d_renderer;
-
+    SDL_Renderer *d_renderer; 
+    
     public:
         explicit ArrowOverlay(OverlayConfig const &config);
         ~ArrowOverlay();

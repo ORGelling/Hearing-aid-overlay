@@ -7,6 +7,8 @@ ArrowOverlay::ArrowOverlay(OverlayConfig const &config)
     d_cfg(config),
     d_cx(d_cfg.window_width / 2),
     d_cy(d_cfg.window_height / 2),
+    d_rx(0),
+    d_ry(0),
     d_radius(min(d_cfg.window_width / 2, 
                  d_cfg.window_height / 2) - d_cfg.margin),
     d_window(0),
