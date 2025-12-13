@@ -10,3 +10,5 @@ using namespace std;
 
 //int usage()?
 int handleExceptions();
+void setOptions(int argc, char **argv, 
+                int &size, double &angle, size_t &count);
