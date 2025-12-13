@@ -33,5 +33,5 @@ catch (const exception &except)
 catch (...)
 {
     cerr << "Unknown fatal error!" << '\n';
-    return 7;
+    return 6;
 }
