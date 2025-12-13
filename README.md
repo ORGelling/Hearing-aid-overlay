@@ -1,18 +1,13 @@
 # Hearing-aid-overlay
-Making a screen overlay to aid people with hearing trouble in where the direction of in-game sounds are coming from
+Making a screen overlay to aid people with hearing trouble in where the 
+direction of in-game sounds are coming from.
 
-Steps for SDL3:<br/>
-• Install SDL3 and SDL_image (via vcpkg, package manager, or from source).<br/>
-• Initialize SDL3 in the main() function.<br/>
-• Load card images (e.g., "images/2H.png", "images/AS.png").<br/>
-• Render cards and buttons using SDL_RenderCopy.<br/>
-• Handle user input (mouse clicks, etc.) to let users pick cards or press buttons.<br/>
-• Update the display as the game state changes.
+Using SDL2 and FMOD, initially working on Linux to then test and implement on
+Windows. SDL2 component is implemented and working, with different options for
+rendering (ellips or circle, arrow angle and size). Still have to implement
+line thickness option if necessary, and possible cmdline config picker etc.
 
-For my upcoming hearing aid project I should look into sonic radar 2, a program that does exactly what I aim to do. Sonic is a built in windows 3d sound module that I should look into.
-
-https://support.microsoft.com/en-gb/windows/how-to-turn-on-spatial-sound-in-windows-ca2700a0-6519-448d-5434-56f499d59c96 
-
-This video is a general tutorial for making simple C++ games I am going to be watching and hopefully using
-
-https://www.youtube.com/watch?v=XOs2qynEmNE
+Now comes FMOD, have not started yet. Should be interesting, have to use it as
+audio engine to extract the relative location of dynamic sounds from so it can
+trigger the arrows in the closest direction. Working with SDL2 and getting it
+to render my arrows was fun though.
