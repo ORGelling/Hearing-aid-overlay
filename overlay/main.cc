@@ -3,9 +3,9 @@
 int main(int argc, char **argv) 
 try
 {
-    int size = 40; 
-    double angle = 3;
     size_t count = 16;
+    double angle = 3;
+    int size = 40; 
 
     setOptions(argc, argv, count, angle, size);
     
