@@ -7,7 +7,7 @@ bool ArrowOverlay::run()
     if (SDL_Init(SDL_INIT_VIDEO) < 0) 
         return false;
 
-    initialiseWindow();
+    initialiseWindow();                         // initialises screen size and arrow locations
     
     d_window = SDL_CreateWindow("Compass Overlay",
         SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
@@ -17,6 +17,9 @@ bool ArrowOverlay::run()
         return false;
 
     d_renderer = SDL_CreateRenderer(d_window, -1, SDL_RENDERER_ACCELERATED);
+
+    configureWindow();                          // sets transparency and topmost
+
     if (!d_renderer) 
     {
         SDL_DestroyWindow(d_window);

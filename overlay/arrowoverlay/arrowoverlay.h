@@ -28,6 +28,7 @@ class ArrowOverlay
 
     private:
         void initialiseWindow();
+        void configureWindow();
         void mainLoop();
         void renderFrame();
         void drawArrow(std::size_t size, double angle);
