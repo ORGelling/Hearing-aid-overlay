@@ -19,7 +19,9 @@ $(TARGET): $(OBJECTS)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
-	del /Q $(subst /,\,$(OBJECTS)) $(TARGET) 2>nul || echo Clean complete
+	if exist $(subst /,\,$(OBJECTS)) del /Q $(subst /,\,$(OBJECTS))
+	if exist $(TARGET) del /Q $(TARGET)
+	echo Clean complete
 
 run: $(TARGET)
 	.\$(TARGET)
