@@ -1,3 +1,3 @@
 main
-overlay/main
+*.o
 overlay/tmp/
