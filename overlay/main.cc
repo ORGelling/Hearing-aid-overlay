@@ -7,7 +7,7 @@ try
     double angle = 3;
     size_t count = 16;
 
-    setOptions(argc, argv, size, angle, count);
+    setOptions(argc, argv, count, angle, size);
     
     // getoptons proper, this is mid
     // processoptions

@@ -1,16 +1,16 @@
 #include "main.ih"
 
 void setOptions(int argc, char **argv, 
-                int &size, double &angle, size_t &count)
+                size_t &count, double &angle, int &size)
 {
     if (argc > 1)
     {
-        size = stoi(argv[1]);
+        count = stoul(argv[1]);
     }
     if (argc > 2)
     {
         angle = stod(argv[2]);
     }
     if (argc == 4)
-        count = stoul(argv[3]);
+        size = stoi(argv[3]);
 }
