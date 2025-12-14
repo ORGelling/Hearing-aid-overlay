@@ -1,3 +1,7 @@
+<<<<<<< HEAD
 main
 overlay/main
+=======
+*.o
+>>>>>>> 3a09af27c92f69d3da060ae860640adff4415318
 overlay/tmp/
