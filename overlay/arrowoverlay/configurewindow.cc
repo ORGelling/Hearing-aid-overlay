@@ -5,7 +5,7 @@
 void ArrowOverlay::configureWindow() 
 {
     // Make window transparent
-    SDL_SysWMinfo wmInfo;
+    SDL_SysWMinfo wmInfo;                           // get window handle
     SDL_VERSION(&wmInfo.version);
     SDL_GetWindowWMInfo(d_window, &wmInfo);
     HWND hwnd = wmInfo.info.win.window;
